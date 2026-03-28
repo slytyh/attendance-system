@@ -1,9 +1,13 @@
 package com.example.attendancesystem.controller;
 import com.example.attendancesystem.entity.Student;
 import org.springframework.web.bind.annotation.*;
+import com.example.attendancesystem.service.StudentService;
+import org.springframework.beans.factory.annotation.Autowired;
 
 @RestController
 public class StudentController {
+    @Autowired
+    private StudentService studentService;
     @GetMapping("/student/info")
     public String info(){
         return "姓名 学号 班级";

@@ -12,6 +12,9 @@ public class StudentServiceImpl implements StudentService {
         if (student == null || !StringUtils.hasText(student.getStudentID())) {
             return "创建失败：学号不能为空";
         }
-        else return "创建成功";
+        if (!StringUtils.hasText(student.getName())) {
+            return "创建失败：姓名不能为空";
+        }
+        return "创建成功";
     }
 }
